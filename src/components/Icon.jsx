@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/Context';
 import icon from './icons/weather.svg';
-import Thunderstorm from './icons/thunderstorm.svg';
+import Thunderstorm from './icons/Thunderstorm.svg';
 import Drizzle from './icons/Drizzle.svg';
 import Rain from './icons/Rain.svg';
 import Snow from './icons/Snow.svg';
