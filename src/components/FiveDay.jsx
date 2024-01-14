@@ -52,8 +52,14 @@ export default function FiveDay({ weatherFive }) {
       {firstFiveData.map((data, index) => (
         <div className={style.fiveDays} key={index}>
           <h3>{data.date}</h3>
-          <h4 >{data.averageTemperature.toFixed(2)}°C</h4>
-         <img src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`} alt="icon" />
+          <h4>
+            {data.averageTemperature.toFixed(2)}
+            {celsius ? "°C" : "°F"}
+          </h4>
+          <img
+            src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`}
+            alt="icon"
+          />
           <h3>{data.description}</h3>
         </div>
       ))}
