@@ -41,9 +41,6 @@ function App() {
 
   return (
     <div
-      style={{
-        backgroundImage: `url("https://img.freepik.com/free-photo/sunset-sky-with-clouds-illuminated-vibrant-orange-hues_157027-2890.jpg?t=st=1705221585~exp=1705225185~hmac=6963ce7d275d9b2bab6ba9ff08e405a6c7484550a1a5033f1ff0d1c974b0987e&w=1380")`,
-      }}
       className={style.app}
     >
       <Day weather={weather} />
