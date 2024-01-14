@@ -7,44 +7,138 @@ body{
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .dayBox{
     display: flex;
     width: 80%;
-
     justify-content: space-evenly;
     /* border: 1px solid red; */
     height: 28rem;
     margin: auto;
+    padding: 1rem;
 }
 
 .day{
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    margin: 0.1rem;
 }
 
-/* .top{
-    border: 1px solid black;
-} */
+.day:hover{
+    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 2.5px 0px; */
+    transition: 0.5s;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top{
+    /* border: 1px solid black; */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20%;
+}
+
+.searchBox{
+    /* border: 1px solid red; */
+    height: 65%;
+    width: 65%;
+    display: flex;
+    align-items: center;
+}
+
+.search{
+    /* padding:0.1rem; */
+    background-color: transparent;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2.5px 0px;
+    border: none;
+    font-weight: 700;
+    font-size: medium;
+    height: 100%;
+    width: 70%;
+}
+
+.search:focus{
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 2.5px 0px;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    font-size: large;
+    font-weight: 600;
+}
+
+.search::placeholder{
+    color: black;
+}
+
+.btn{
+    background-color: transparent;
+    border: none;
+    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 2.5px 0px; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    cursor: pointer;
+    height: 100%;
+    width: 30%;
+    transition: 0.5s;
+    margin: 1rem;
+}
+
+
+
 
 .center{
     display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid black; */
+    width: 80%;
+    margin: auto;
 }
 
 .icon{
-    width: 20rem;
+    width: 10rem;
     /* border: 1px solid rgb(236, 10, 10); */
     position: relative;
     left: 2rem;
+    display: flex;
+    padding: 2rem;
+
 }
 
 .temp{
     /* border: 1px solid rgb(0, 0, 0); */
     position: relative;
-    right: 2rem;
-    
+    right: 2.5rem;
+}
+
+.bottomBtn{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 1rem;
+    /* border:1px solid black; */
+    /* width: 80%; */
+    height: 8%;
+}
+
+.bottomBtn button{
+    /* margin: 1rem; */
+    background-color: transparent;
+    border: none;
+   box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+   font-size: large;
+   padding: 0.5rem;
+   border-radius: 5px;
+   height: 100%;
+   width: 12%;
 }
 
 .detailBox{
@@ -52,12 +146,24 @@ body{
     grid-template-columns: repeat(3,1fr);
     align-items: center;
     align-content: center;
-    gap: 2rem;
-    padding: 1rem;
+    /* gap: 0.5rem; */
+    margin: auto;
+    /* padding: 1rem; */
+    /* border: 1px solid black; */
+    width: 95%;
+    border-top: 1px solid black;
 }
 
 .detailBox div{
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
+    /* border-right: 1px solid black; */
+    /* border: 1px solid red; */
+    margin: auto;
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .mapBox{
@@ -82,8 +188,68 @@ body{
 }
 
 .fiveDayBox div{
-    width: 17%;
+    width: 15%;
     backdrop-filter: blur(10px);
     text-align: center;
     border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+
 }
+
+.fiveDayBox div:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    /* transition: 0.5s; */
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1670px) {
+    .app{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+   
+}
+
+
+@media screen and (max-width: 1070px) {
+
+      .app{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
+}
+
+    .dayBox{
+        display: flex;
+        flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid black;
+
+    }
+
+
+    .fiveDayBox{
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 100%;
+        border: 1px solid black;
+
+    }
+}
+
+/* @media screen and (max-width: 970px) {
+
+    .dayBox{
+        display: flex;
+        flex-direction: column;
+    justify-content: space-evenly;
+
+    }
+} */

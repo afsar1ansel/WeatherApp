@@ -4,7 +4,6 @@ import MapComponent from "./Map";
 import { TbWorldSearch } from "react-icons/tb";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../context/Context";
-import Icon from "./Icon";
 
 export default function FiveDay({ weatherFive }) {
   const { area, setArea, getTime, celsius, setCelsius } = useContext(Context);
@@ -46,16 +45,16 @@ export default function FiveDay({ weatherFive }) {
   };
   
   const firstFiveData = decodeAndExtractData(weatherFive || []); 
-  console.log(firstFiveData);
+  // console.log(firstFiveData);
 
   return (
     <div className={style.fiveDayBox}>
       {firstFiveData.map((data, index) => (
         <div className={style.fiveDays} key={index}>
           <h3>{data.date}</h3>
-          <p >{data.averageTemperature.toFixed(2)}°C</p>
+          <h4 >{data.averageTemperature.toFixed(2)}°C</h4>
          <img src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`} alt="icon" />
-          <p >{data.description}</p>
+          <h3>{data.description}</h3>
         </div>
       ))}
     </div>

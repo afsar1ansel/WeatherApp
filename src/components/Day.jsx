@@ -4,7 +4,7 @@ import MapComponent from "./Map";
 import { useContext, useState } from "react";
 // import { TbWorldSearch } from "react-icons/tb";
 import { Context } from "../context/Context";
-import Icon from "./Icon";
+import Icon from "./icon";
 
 export default function Day({ weather }) {
   const [searchValue, setSearchValue] = useState("");
@@ -30,8 +30,14 @@ export default function Day({ weather }) {
       "NW",
       "NNW",
     ];
+
+
+    
     return compassDirections[val % 16];
   }
+
+
+  console.log(weather)
 
   function handleClick() {
     setArea(searchValue);
@@ -62,7 +68,11 @@ export default function Day({ weather }) {
         </div>
         <div className={style.center}>
           <div className={style.icon}>
-            <Icon main={weather?.dt} mi={weather?.weather?.[0]?.main} />
+            {/* <Icon main={weather?.dt} mi={weather?.weather?.[0]?.main} /> */}
+            <img
+              src={`http://openweathermap.org/img/wn/${weather?.weather?.[0]?.icon}@2x.png`}
+              alt="icon"
+            />
           </div>
           <div className={style.temp}>
             <h1 style={{ fontSize: "3em" }}>
@@ -70,36 +80,38 @@ export default function Day({ weather }) {
               {celsius ? "°C" : "°F"}
             </h1>
             <h4 style={{ textAlign: "end" }}>
-              Feels {weather?.main?.feels_like}
+              Feels Like : {weather?.main?.feels_like}
               {celsius ? "°C" : "°F"}
             </h4>
           </div>
         </div>
-        <div>
+        <div className={style.bottomBtn}>
           <button className={style.tglBtn} onClick={() => setCelsius(!celsius)}>
             {celsius ? "°C" : "°F"}
           </button>
         </div>
         <div className={style.detailBox}>
           <div>
-            <h5>
+            <h3>
               Max:- {weather?.main?.temp_max} {celsius ? "°C" : "°F"}
-            </h5>
+            </h3>
           </div>
           <div>
-            <h5>
+            <h3>
               Min:- {weather?.main?.temp_min} {celsius ? "°C" : "°F"}
-            </h5>
+            </h3>
           </div>
           <div>
-            <h5>Wind:- {weather?.wind?.speed} km/h </h5>
-          </div>
-          <div><h5>direction</h5></div>
-          <div>
-            <h5>Humidity:- {weather?.main?.humidity}</h5>
+            <h3>Wind:- {weather?.wind?.speed} km/h </h3>
           </div>
           <div>
-            <h5>Descripton:- {weather?.weather?.[0]?.description}</h5>
+            <h3>Direction:- {degreesToCompass(weather?.wind?.deg)}</h3>
+          </div>
+          <div>
+            <h3>Humidity:- {weather?.main?.humidity}</h3>
+          </div>
+          <div>
+            <h3>Descripton:- {weather?.weather?.[0]?.description}</h3>
           </div>
         </div>
       </div>
