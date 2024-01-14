@@ -60,9 +60,10 @@ export default function Day({ weather }) {
               Search
             </button>
           </div>
-          <div>
+          <div style={{marginTop: "-20px"}}>
             {/* <h4 style={{textAlign: "end"}}>{weather?.sys?.country}</h4> */}
-            <p style={{ textAlign: "end" }}>{getTime(weather?.dt)}</p>
+            <h3>{weather?.name},</h3>
+            <p style={{ textAlign: "end",marginTop: "-20px" }}>{getTime(weather?.dt)}</p>
           </div>
         </div>
         <div className={style.center}>
