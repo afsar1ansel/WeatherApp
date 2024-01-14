@@ -4,7 +4,6 @@ import MapComponent from "./Map";
 import { useContext, useState } from "react";
 // import { TbWorldSearch } from "react-icons/tb";
 import { Context } from "../context/Context";
-import Icon from "./icon";
 
 export default function Day({ weather }) {
   const [searchValue, setSearchValue] = useState("");
