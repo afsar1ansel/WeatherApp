@@ -33,7 +33,7 @@ function App() {
       fetchWeatherDetails()
 
     }
-  }, []); // Empty dependency array ensures that this effect runs once on mount
+  }, []); 
 
   useEffect(() => {
     if (location) {
@@ -57,11 +57,11 @@ function App() {
       
     } catch (error) {
       console.error("Error fetching data:", error);
-      // alert("Error fetching data. Please try again later.");
+      
     } 
   };
 
-  ///here
+  
 
   async function fetchWeatherDetails() {
     try {

@@ -14,7 +14,7 @@ body{
 
 .dayBox{
     display: flex;
-    width: 80%;
+    width: 90%;
     justify-content: space-evenly;
     /* border: 1px solid red; */
     height: 28rem;
